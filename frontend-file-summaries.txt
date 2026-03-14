@@ -1,0 +1,10 @@
+{
+  "frontend/src/App.tsx": "Main application component that sets up TanStack Router with routes for home page and surah reading page, wrapped in ThemeProvider for light/dark mode support, using Outlet component directly from the router library.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for fetching surahs list and verses by surah number from the backend actor.",
+  "frontend/src/pages/HomePage.tsx": "Home page component displaying a scrollable list of all surahs with header, loading states, and footer with attribution.",
+  "frontend/src/pages/SurahReadingPage.tsx": "Surah reading page that displays surah metadata and all verses with back navigation, using URL params to identify the surah.",
+  "frontend/src/components/SurahCard.tsx": "Reusable card component for displaying individual surah information with Arabic name, transliteration, translation, verse count, and revelation type badge, clickable to navigate to reading page.",
+  "frontend/src/components/VerseDisplay.tsx": "Component for displaying individual verses with verse number badge, Arabic text in RTL direction, and English translation below.",
+  "frontend/src/index.css": "Global styles with OKLCH color system using warm cream backgrounds and deep olive green accents, includes Amiri font for Arabic text with proper RTL styling and Lora/Inter for Latin text.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with custom color palette (warm earth tones and deep greens), custom font families (Amiri for Arabic, Lora for headings, Inter for body), and adjusted border radius."
+}

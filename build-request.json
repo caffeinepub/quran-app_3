@@ -1,0 +1,143 @@
+{
+  "kind": "build_request",
+  "title": "Create Quran reading application",
+  "projectName": "Quran Reader",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a backend data model to store Quran surahs (chapters) with surah number, Arabic name, English transliteration, English translation, number of verses, and revelation type (Meccan/Medinan)",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores complete list of 114 surahs with metadata",
+        "Each surah includes surah number, Arabic name, transliteration, translation, verse count, and revelation type"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Create a backend data model to store Quran verses with surah number, verse number, Arabic text, and English translation",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Backend stores verses with surah reference, verse number, Arabic text, and English translation",
+        "Verses can be queried by surah number"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement backend query functions to retrieve list of all surahs and to retrieve all verses for a specific surah by surah number",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Function returns complete list of surahs with metadata",
+        "Function accepts surah number and returns all verses for that surah",
+        "Queries return data in correct order"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Create a home page displaying a scrollable list of all 114 surahs showing surah number, Arabic name, English name, number of verses, and revelation type",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home page displays complete list of all 114 surahs",
+        "Each surah entry shows number, Arabic name, English name, verse count, and revelation type",
+        "List is scrollable and organized by surah number"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Make each surah in the list clickable to navigate to a detailed surah reading page",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Clicking a surah navigates to its reading page",
+        "Navigation preserves surah context"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Create a surah reading page that displays the surah title, metadata, and all verses with verse numbers, Arabic text, and English translations",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Reading page shows surah name and metadata at the top",
+        "All verses display with verse number, Arabic text, and English translation",
+        "Verses are presented in sequential order",
+        "Page is scrollable for long surahs"
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Style Arabic text appropriately with proper font rendering and right-to-left text direction support",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Arabic text renders with appropriate font suitable for Quranic text",
+        "Text direction is right-to-left for Arabic content",
+        "Arabic text is clearly readable and properly sized"
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Design a clean, respectful visual theme with calming colors, elegant typography, and spacious layout that reflects the reverent nature of Quranic content, using warm earth tones or deep greens with cream or off-white backgrounds",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Visual design uses respectful, calming color palette",
+        "Typography is elegant and readable",
+        "Layout provides appropriate whitespace and visual hierarchy",
+        "Overall aesthetic is clean and reverent"
+      ]
+    }
+  ],
+  "constraints": [
+    "Must use Motoko for backend implementation",
+    "Must use React with TypeScript and Tailwind CSS for frontend",
+    "Arabic text must maintain proper right-to-left rendering"
+  ],
+  "nonGoals": [
+    "Audio recitation playback",
+    "Multiple translation options",
+    "User authentication or bookmarking",
+    "Search functionality",
+    "Tafsir (commentary) content"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

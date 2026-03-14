@@ -1,0 +1,133 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Quran Reader Frontend Implementation",
+  "requirements": [
+    {
+      "id": "REQ-4",
+      "summary": "Create home page displaying scrollable list of all 114 surahs",
+      "acceptanceCriteria": [
+        "Home page displays complete list of all 114 surahs",
+        "Each surah entry shows number, Arabic name, English name, verse count, and revelation type",
+        "List is scrollable and organized by surah number"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create home page component that fetches all surahs from backend using getSurahs() method and displays them in a scrollable list. Each surah card shows surah number, Arabic name, English transliteration, verse count, and revelation type (Meccan/Medinan). Use the shadcn-ui Card component for each surah entry. Apply styling from the design theme (REQ-8) with warm earth tones and elegant typography."
+        },
+        {
+          "path": "frontend/src/components/SurahCard.tsx",
+          "operation": "create",
+          "description": "Create reusable surah card component that displays individual surah information including number, Arabic name (with RTL support), English transliteration, verse count, and revelation type badge. Make the card clickable to enable navigation (REQ-5). Use shadcn-ui Card component as base. Apply proper Arabic text styling with RTL direction as specified in REQ-7."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire HomePage as the root route and set up React Router with routes for home page (/) and surah reading page (/:surahNumber). Replace existing placeholder content with router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Make each surah clickable to navigate to reading page",
+      "acceptanceCriteria": [
+        "Clicking a surah navigates to its reading page",
+        "Navigation preserves surah context"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/SurahCard.tsx",
+          "operation": "modify",
+          "description": "Add onClick handler or Link wrapper to navigate to /surah/:surahNumber route when surah card is clicked. Pass surah number as URL parameter to preserve context for the reading page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Create surah reading page displaying title, metadata, and verses",
+      "acceptanceCriteria": [
+        "Reading page shows surah name and metadata at the top",
+        "All verses display with verse number, Arabic text, and English translation",
+        "Verses are presented in sequential order",
+        "Page is scrollable for long surahs"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/SurahReadingPage.tsx",
+          "operation": "create",
+          "description": "Create surah reading page that extracts surahNumber from URL params, fetches surah metadata from getSurahs() and verse data using getVersesBySurah(surahNumber) backend method. Display surah header with Arabic name, English transliteration, verse count, and revelation type. Render all verses in order with verse numbers, Arabic text (RTL), and English translations. Include back navigation to home page. Make page scrollable for long surahs."
+        },
+        {
+          "path": "frontend/src/components/VerseDisplay.tsx",
+          "operation": "create",
+          "description": "Create verse display component that shows individual verse with verse number badge, Arabic text (properly styled with RTL as per REQ-7), and English translation below. Use spacious layout with clear visual separation between verses. Apply reverent design theme from REQ-8."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Register SurahReadingPage route at /surah/:surahNumber in the router configuration."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Style Arabic text with proper font rendering and RTL support",
+      "acceptanceCriteria": [
+        "Arabic text renders with appropriate font suitable for Quranic text",
+        "Text direction is right-to-left for Arabic content",
+        "Arabic text is clearly readable and properly sized"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add @font-face rules to import appropriate Arabic fonts suitable for Quranic text (such as Amiri, Scheherazade, or similar). Define CSS classes for Arabic text styling with RTL direction (direction: rtl, text-align: right), appropriate font-size, line-height, and font-family. Ensure Arabic text is clearly readable with proper spacing."
+        },
+        {
+          "path": "frontend/src/components/SurahCard.tsx",
+          "operation": "modify",
+          "description": "Apply Arabic text styling classes to Arabic name display, ensuring RTL direction and proper font rendering."
+        },
+        {
+          "path": "frontend/src/components/VerseDisplay.tsx",
+          "operation": "modify",
+          "description": "Apply Arabic text styling classes to verse Arabic text, ensuring RTL direction, appropriate font, and clear readability."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Design clean, respectful visual theme with calming colors and elegant typography",
+      "acceptanceCriteria": [
+        "Visual design uses respectful, calming color palette",
+        "Typography is elegant and readable",
+        "Layout provides appropriate whitespace and visual hierarchy",
+        "Overall aesthetic is clean and reverent"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme with custom color palette using warm earth tones (browns, tans) and deep greens as primary colors, with cream or off-white backgrounds. Define custom spacing values for generous whitespace. Configure elegant font families for both Arabic and Latin text."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Define global styles for reverent, clean aesthetic including base typography rules with elegant fonts, comfortable line-height, and generous spacing. Set body background to cream or off-white. Apply calming color scheme throughout with deep greens and earth tones. Ensure sufficient whitespace and clear visual hierarchy."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Apply theme styling with appropriate spacing, colors from the calming palette, and elegant typography. Ensure generous whitespace around surah list and between elements."
+        },
+        {
+          "path": "frontend/src/pages/SurahReadingPage.tsx",
+          "operation": "modify",
+          "description": "Apply reverent design theme with calming colors, elegant typography, and spacious layout. Use deep greens or earth tones for headers and accents, cream background, and generous padding and margins."
+        }
+      ]
+    }
+  ]
+}

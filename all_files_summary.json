@@ -1,0 +1,19 @@
+{
+  "backend/main.mo": "Motoko actor defining Surah and Verse types with sample data for Al-Fatiha, exposing query functions getSurahs() and getVersesBySurah() to retrieve Quran content.",
+  "feature_evidence.json": "Feature evidence report documenting five implemented features: home page with surah list, clickable navigation, surah reading page, Arabic text styling with RTL support, and reverent visual theme design.",
+  "frontend-file-summaries.txt": "JSON-formatted summaries of frontend files describing routing, data fetching hooks, page components, UI components for surahs and verses, and styling configuration.",
+  "frontend/index.css": "Tailwind CSS base styles defining OKLCH color system variables for light and dark themes with neutral backgrounds and muted accent colors.",
+  "frontend/index.html": "HTML entry point with root div and module script loading main.tsx for the Quran app.",
+  "frontend/src/App.tsx": "Root React component configuring TanStack Router with routes for home page and surah reading page, wrapped in ThemeProvider with Toaster for notifications.",
+  "frontend/src/components/SurahCard.tsx": "Card component displaying surah metadata (number, Arabic name, transliteration, translation, verse count, revelation type) with hover effects and click navigation to reading page.",
+  "frontend/src/components/VerseDisplay.tsx": "Card component rendering individual verses with verse number badge, RTL Arabic text, and English translation separated by a border.",
+  "frontend/src/hooks/useActor.ts": "React Query hook managing backend actor creation with Internet Identity authentication, invalidating dependent queries when identity changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "Context provider and hook for Internet Identity authentication, managing login state, identity persistence, and AuthClient lifecycle with configurable options.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks useGetSurahs() and useGetVersesBySurah() for fetching Quran data from the backend actor with proper dependency management.",
+  "frontend/src/index.css": "Global CSS file that imports Google Fonts (Amiri, Lora, Inter), configures Tailwind CSS, and defines custom CSS variables for light/dark theme colors using OKLCH color space with warm cream/deep green palette, plus utility classes for Arabic text styling.",
+  "frontend/src/main.tsx": "Application entry point that renders the root React component with QueryClient and InternetIdentityProvider wrappers for state management and authentication.",
+  "frontend/src/pages/HomePage.tsx": "Home page component that displays a header with Quran title and a scrollable list of all 114 surahs using the useGetSurahs hook, with loading and error states.",
+  "frontend/src/pages/SurahReadingPage.tsx": "Surah reading page component that displays a specific surah's metadata and all its verses using route parameters, with navigation back to home and scrollable verse display.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration that extends the default theme with custom colors using OKLCH color space, custom border radius variables, font families (Inter, Lora, Amiri), and animation keyframes for accordion components.",
+  "project_state.json": "Project state tracking file documenting completed frontend features (home page, surah list, reading page, Arabic styling, visual theme) and pending backend features (data models for surahs/verses and query functions)."
+}

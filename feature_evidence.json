@@ -1,0 +1,104 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-home-page-displaying-a-scrollable-list-of-all-114-surahs-showing-surah-number-arabic-name-english-name-number-of-verses-and-revelation-type",
+      "featureTitle": "Create a home page displaying a scrollable list of all 114 surahs showing surah number, Arabic name, English name, number of verses, and revelation type",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SurahCard.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-make-each-surah-in-the-list-clickable-to-navigate-to-a-detailed-surah-reading-page",
+      "featureTitle": "Make each surah in the list clickable to navigate to a detailed surah reading page",
+      "files": [
+        "frontend/src/components/SurahCard.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-a-surah-reading-page-that-displays-the-surah-title-metadata-and-all-verses-with-verse-numbers-arabic-text-and-english-translations",
+      "featureTitle": "Create a surah reading page that displays the surah title, metadata, and all verses with verse numbers, Arabic text, and English translations",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/VerseDisplay.tsx",
+        "frontend/src/pages/SurahReadingPage.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-style-arabic-text-appropriately-with-proper-font-rendering-and-right-to-left-text-direction-support",
+      "featureTitle": "Style Arabic text appropriately with proper font rendering and right-to-left text direction support",
+      "files": [
+        "frontend/src/components/SurahCard.tsx",
+        "frontend/src/components/VerseDisplay.tsx",
+        "frontend/src/index.css"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-design-a-clean-respectful-visual-theme-with-calming-colors-elegant-typography-and-spacious-layout-that-reflects-the-reverent-nature-of-quranic-content-using-warm-earth-tones-or-deep-greens-with-cream-or-off-white-backgrounds",
+      "featureTitle": "Design a clean, respectful visual theme with calming colors, elegant typography, and spacious layout that reflects the reverent nature of Quranic content, using warm earth tones or deep greens with cream or off-white backgrounds",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/SurahReadingPage.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    }
+  ]
+}
